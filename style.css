@@ -1,0 +1,98 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Heading Style */
+h1 {
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Dice Container Layout */
+.dice-container {
+    display: flex;
+    gap: 30px; /* Increased gap for better spacing */
+    margin-bottom: 50px; /* More space between dice and button */
+}
+
+/* Individual Dice Styling */
+.dice {
+    width: 120px; /* Slightly larger dice */
+    height: 120px;
+    border: 3px solid #333; /* Thicker border */
+    border-radius: 20px; /* More rounded corners */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em; /* Larger number */
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; /* Added shadow transition */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Rolling Animation for Dice */
+.dice.rolling {
+    animation: shake 0.6s infinite cubic-bezier(.36,.07,.19,.97) both; /* Smoother and more pronounced shake */
+    transform-origin: 50% 50%;
+    backface-visibility: hidden; /* Prevent flickering */
+    perspective: 1000px; /* For 3D transformations */
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Button Styling */
+button {
+    padding: 18px 35px; /* Larger padding */
+    font-size: 1.4em; /* Larger font */
+    background-color: #28a745; /* A slightly darker green for better contrast */
+    color: white;
+    border: none;
+    border-radius: 10px; /* More rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+    outline: none; /* Remove outline on focus */
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active {
+    background-color: #1e7e34; /* Even darker when clicked */
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Total Display Styling */
+.total {
+    margin-top: 40px; /* More space from the button */
+    font-size: 1.8em; /* Larger font for total */
+    font-weight: bold;
+    color: #555; /* Slightly softer color */
+    background-color: #fff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+}
